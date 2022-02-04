@@ -8,9 +8,11 @@ const ExpenseItem = (props) => {
     const onEditButtonClicked = () => {
         setTitle('Mobile Purchase');
     }
-    let [date, setDate] = useState(props.expense.date);
-    let [title, setTitle] = useState(props.expense.title);
-    let [amount, setAmount] = useState(props.expense.amount);
+
+    // it's recommended to use 'const' instead of 'let' in state management - useState Hook
+    const [title, setTitle] = useState(props.expense.title);
+    const [amount, setAmount] = useState(props.expense.amount);
+    const [date, setDate] = useState(props.expense.date);
 
     return (<Card className={'expense-item'}>
         <ExpanseDate date={date}/>
