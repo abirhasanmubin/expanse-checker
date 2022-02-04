@@ -13,8 +13,13 @@ const App = () => {
         id: 'e4', title: 'New Desk (Wooden)', amount: 450, date: new Date(2021, 5, 12),
     }];
 
+    const onNewExpenseItemHandler = (expense) => {
+        expenses.push(expense);
+        console.log(expenses)
+    }
+
     return (<div>
-        <NewExpense/>
+        <NewExpense onNewExpense={onNewExpenseItemHandler}/>
         <Card className={'expenses'}>
             <ExpenseItem expense={expenses[0]}/>
             <ExpenseItem expense={expenses[1]}/>
