@@ -4,11 +4,6 @@ import ExpanseDate from "../ExpanseDate/ExpanseDate";
 import Card from "../UI/Card/Card";
 
 const ExpenseItem = (props) => {
-
-    const onEditButtonClicked = () => {
-        setTitle('Mobile Purchase');
-    }
-
     // it's recommended to use 'const' instead of 'let' in state management - useState Hook
     const [title, setTitle] = useState(props.expense.title);
     const [amount, setAmount] = useState(props.expense.amount);
@@ -20,7 +15,6 @@ const ExpenseItem = (props) => {
             <h2>{title}</h2>
             <div className={'expense-item__price'}>&#2547;{amount}</div>
         </div>
-        <button onClick={onEditButtonClicked}>Edit Entry</button>
     </Card>)
 }
 
